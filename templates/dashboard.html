@@ -1,0 +1,253 @@
+{% extends "base.html" %} {% set active_page = "Dashboard" %} {% block content %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}" />
+<div class="container" style='margin-top: 10px; text-align: center;'>
+    <h3 style="padding: 5px; font-size: 40px; color: RGB(198, 70, 69);">Accountability Court Data</h3>
+    <hr>
+    <div class="row" style='width:100%; margin-top: 30px;'>
+        <div class="col-md-12">
+            <div style='margin-top: 10px; text-align: center;'></div>
+            <h3></h3>
+            <!-- <div class="container">
+                <p style="font-weight: 400; font-size: 14px;">  </p>
+            </div> -->
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-7">
+            <br>
+            <div id="plotGraduationStatusTypeCount">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 15px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Participants by Graduation Status</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">The majority of participants in Accountability Court programs graduate the program, saving the state approximately $22,000 per participant. A not insignificant amount do end the program by discharge (could be relocation, medical-related,
+                        or death) or termination (breaching program protocol, etc.). </p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi, -->
+                    <!-- cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Participants by Age</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">The most populated range of age of participants is the 30-39 range. The ages tend to reduce further out from that range, with an exceptional boost in the 55-59 age range. Expectedly, the smallest age range, is 0-17, considering many
+                        in this age range could also be redirected to programs for children.</p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <br>
+            <div id="plotAverageAgeByCount">
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+
+    <div class="row">
+        <div class="col-md-7">
+            <br>
+            <div id="plotBasedOnStatusDrug">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Accountability Court Graduation Status by Primary Drug Choice</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">The two largest categories of drug choice are amphetamines and alcohol. Interestingly, while more program participants consider amphetamines their drug of choice, very slightly more alcohol-consuming participants graduated their programs.
+                        There is also a significant number less of alcohol-consuming participants that end their programs by termination. </p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Accountability Court Graduation Status by Education Level</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">This graph illustrates participant success status classified by their education level. The more educated, the higher success rate. The overall highest group, "high school graduate" also has the largest group of "terminated" participants.
+                        The "some college" group, while smaller, also has a smaller group of "terminated" participants.</p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <br>
+            <div id="plotBasedOnStatusEducation">
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Based Graphs -->
+
+    <div class="row">
+        <div class="col-md-7">
+            <br>
+            <div>
+                <img class="img-styles" src="/static/images/clusters.png" alt="Member Photo">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Cluster Analysis</h5>
+                    <hr>
+
+                    <p style="text-align:left;font-size:18px;" class="sub-text">Cluster Analysis Using K- Means technique.<br> PCA and t-sne used to reduce the number of dimensions, while maintaining 99% of the explained variance.<br> Chose 2 clusters for purposes of visualization. Graduation, outcome variable
+                        of interest, is binary. </p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Cluster Analysis vs Employment</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">KNN clusters vs. Employment at Entry. Cluster one (yellow) most likely to be employed full time at entry. Cluster two (purple) most likely to be unemployed at entry. Clusters differ on basis of incoming age, income, employment,
+                        and risk profile. Clusters also differ on treatment, drug test, and number of hearings. From this data, we can </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <br>
+            <div>
+                <img class="img-styles" src="/static/images/employment_clusters.png" alt="Member Photo">
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <br>
+            <div>
+                <img class="img-styles" src="/static/images/graduation_clusters2.png" alt="Member Photo">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Cluster Analysis based on Graduation Status</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text"> KNN clusters added to original participant dataframe to anlayze how clusters relate to specific variables of interest. KNN clusters vs graduation status of participant. Participants from cluster one (yellow) were more likely to be
+                        program graduates than participants from cluster 0 (purple)</p>
+                    <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <div class="column">
+                    <h5 class="title">Title</h5>
+                    <hr>
+                    <p style="text-align:left;font-size:18px" class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                        cumque quisquam?</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <br>
+            <div>
+                <img class="img-styles" src="/static/images/risk_clusters.png" alt="Member Photo">
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <br>
+            <div style="margin: 10px;" class="row text-center">
+                <h5 class="title">Distribution of Accountability Court Participants in Georgia</h5>
+                <hr>
+                <p style="text-align:left;font-size:18px" class="sub-text">This heat map shows distribution of participants of accountability courts around the state of Georgia. Participants are, unsurprisingly, concentrated around more highly populated areas- the Atlanta metro area, August, Savannah, etc.</p>
+                <!-- <p class="sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum necessitatibus id voluptatibus a placeat, dolorem cupiditate assumenda, quidem doloribus blanditiis eligendi repellendus consequatur culpa est incidunt! Excepturi,
+                    cumque quisquam?</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <iframe frameborder="0" marginheight="0" marginwidth="0" title="Data Visualization" allowtransparency="true" allowfullscreen="true" class="tableauViz" src="http://public.tableau.com/views/GAAccountabilityCourtsHeatMap/Dashboard1?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=yes&amp;:animate_transition=yes&amp;:display_static_image=no&amp;:display_spinner=no&amp;:display_overlay=yes&amp;:display_count=yes&amp;:language=en-US&amp;publish=yes&amp;:loadOrderID=0"></iframe>
+        </div>
+    </div>
+
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1637843249421');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (divElement.offsetWidth > 800) {
+        vizElement.style.minWidth = '420px';
+        vizElement.style.maxWidth = '650px';
+        vizElement.style.width = '100%';
+        vizElement.style.minHeight = '587px';
+        vizElement.style.maxHeight = '887px';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else if (divElement.offsetWidth > 500) {
+        vizElement.style.minWidth = '420px';
+        vizElement.style.maxWidth = '650px';
+        vizElement.style.width = '100%';
+        vizElement.style.minHeight = '587px';
+        vizElement.style.maxHeight = '887px';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '727px';
+    }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+<script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+{% endblock %}

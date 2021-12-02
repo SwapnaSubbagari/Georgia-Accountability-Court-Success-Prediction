@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% set active_page = "Home" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
+
+<div class="home">
+    <div class="card">
+        <div>
+            <h2><i>Group - 6</i></h2>
+            <h3><u>TEAM MEMBERS:</u> </h3>
+            <h3><i>Ashley Howell Gates</i></h3>
+            <h3><i>Mathew Bishop</i></h3>
+            <h3><i>Raheem Paxton</i></h3>
+            <h3><i>Swapna Subbagari</i></h3>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% set active_page = "About" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="team-area sp" style="margin-top: 104px;">
+    <div class="container">
+        <div class="row">
+            <h2>Team Members </h2>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 single-team">
+                <div class="inner">
+                    <div class="team-img">
+                        <img style="height: 250px;" style="height: 250px;" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Member Photo">
+                    </div>
+                    <div class="team-content">
+                        <h4>Ashley Howell Gates</h4>
+                        <h5>Data Scientist</h5>
+                        <div class="team-social">
+                            <a href="https://github.com/ahowellgates" class="fa fa-github"></a>
+                            <a href="https://www.linkedin.com/in/ashley-howell-gates-27539875/" class="fa fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 single-team">
+                <div class="inner">
+                    <div class="team-img">
+                        <img style="height: 250px;" src="/static/images/human.webp" alt="Member Photo">
+                    </div>
+                    <div class="team-content">
+                        <h4>Mathew Bishop</h4>
+                        <h5>Software Engineer</h5>
+                        <div class="team-social">
+                            <a href="https://github.com/mabishop84" class="fa fa-github"></a>
+                            <a href="" class="fa fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 single-team">
+                <div class="inner">
+                    <div class="team-img">
+                        <img style="height: 250px;" src="/static/images/313668.png" alt="Member Photo">
+                    </div>
+                    <div class="team-content">
+                        <h4>Raheem Paxton</h4>
+                        <h5>Software Engineer</h5>
+                        <div class="team-social">
+                            <a href="https://github.com/rjpaxtondata" class="fa fa-github"></a>
+                            <a href="https://www.linkedin.com/in/raheem-paxton-a71aa019" class="fa fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 single-team">
+                <div class="inner">
+                    <div class="team-img">
+                        <img style="height: 250px;" src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Member Photo">
+                    </div>
+                    <div class="team-content">
+                        <h4>Swapna Subbagari</h4>
+                        <h5>Sr. Business Analyst/ Project Manager</h5>
+                        <div class="team-social">
+                            <a href="https://github.com/SwapnaSubbagari" class="fa fa-github"></a>
+                            <a href="https://www.linkedin.com/in/swapna-subbagari-csm-84615b127/" class="fa fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/about.js')}}"></script>
+{% endblock %}

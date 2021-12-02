@@ -1,0 +1,155 @@
+{% extends "base.html" %} {% set active_page = "ML Model" %} {% block content %}
+
+<!-- D3 library -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<!-- Leaflet JavaScript code -->
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+<script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+
+<!-- Our CSS -->
+<link rel="stylesheet" type="text/css" href="static/css/ml.css">
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-11">
+            <h1 style="font-weight:bold">Graduation Probability Predictor</h1>
+            <h5 style ="font-weight:bold">(All fields are required)</h5>
+        </div>
+        <div class="col">
+            <a href="/ml" style="margin-top: 20px;" class="btn btn-info">RESET</a>
+        </div>
+    </div>
+    <hr>
+    <form action="{{ url_for('result') }}" method="POST" class="was-validated">
+        <div class=row>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="AGE"><b>Age</b></label>
+                    <br>
+                    <input type="text" id="AGE" name="AGE" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 15 to 81)
+                    </small>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="PROGRAM_TYPE_DUI Courts"><b>Program Type</b></label>
+                    <br>
+                    <select id="PROGRAM_TYPE_DUI Courts" name="PROGRAM_TYPE_DUI Courts">
+                    <option value="1">DUI Courts</option>
+                    <option value="0">Family Treatment</option>
+                    <option value="0">Felony Drug</option>
+                    <option value="0">Juvenile Drug</option>
+                    <option value="0">Mental Health</option>
+                    <option value="0">Veterans Court</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="RISK_LEVEL3_high"><b>Risk Level</b></label>
+                    <br>
+                    <select id="RISK_LEVEL3_high" name="RISK_LEVEL3_high">
+                      <option value="1">High</option>
+                      <option value="0">Medium</option>
+                      <option value="0">Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class=row>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="No_DRUG_TEST"><b>Number of Drug Test</b> </label>
+                    <input type="text" id="No_DRUG_TEST" name="No_DRUG_TEST" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 0 to 1664)
+                    </small>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="No_TREATMENTS"><b>Number of Treatments</b> </label>
+                    <input type="text" id="No_TREATMENTS" name="No_TREATMENTS" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 0 to 396)
+                    </small>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="No_HEARING"><b>Number of Hearings</b> </label>
+                    <input type="text" id="No_HEARING" name="No_HEARING" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 0 to 495)
+                    </small>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class=row>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="No_SANC_INCENT"><b>Number of Sanction Incentives </b></label>
+                    <input type="text" id="No_SANC_INCENT" name="No_SANC_INCENT" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 0 to 396)
+                    </small>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="DAYS_TO_ACCEPTANCE"><b>Days to Acceptance </b></label>
+                    <input type="text" id="DAYS_TO_ACCEPTANCE" name="DAYS_TO_ACCEPTANCE" required>
+                    <br>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        (range = 1 to 10141)
+                    </small>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div style="margin: 20px;" class=row>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">PREDICT</button>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </form>
+    <div class="card" style="width: 48rem; margin: 20px;">
+        <div class="card-body">
+            <h5 class="card-title">Prediction Result : </h5>
+            <h3 style="color: rgb(123, 23, 173);font-family: 'Brush Script MT', cursive;" class="card-subtitle mb-2">{{ prediction }}</h3>
+            <p class="card-text">{{ info }}</p>
+        </div>
+    </div>
+</div>
+<!-- Our JavaScript file -->
+<script type="text/javascript" src="static/js/ml.js"></script>
+
+{% endblock %}

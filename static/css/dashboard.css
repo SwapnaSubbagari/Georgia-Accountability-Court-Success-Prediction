@@ -1,0 +1,64 @@
+id {
+    background-color: aliceblue;
+}
+
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#map,
+body,
+html {
+    background-color: white;
+    height: 100%;
+}
+
+h1 {
+    text-emphasis-color: rgba(0, 0, 0, 0.863);
+    text-align: center;
+}
+
+.row img img-AA {
+    background: #f3f6fa;
+    width: 50%;
+    padding-top: 4px;
+    margin: auto;
+    border-radius: 15px 15px 0px 0px;
+    margin-top: 17px;
+}
+
+.title {
+    font-size: 22px;
+    padding: 5px;
+    color: RGB(198, 70, 69);
+    font-weight: 700;
+}
+
+.sub-text {
+    font-size: 14px;
+}
+
+.alert {
+    display: none;
+}
+
+.tableauViz {
+    display: block;
+    min-width: 520px;
+    max-width: 650px;
+    width: 100%;
+    min-height: 587px;
+    max-height: 887px;
+    height: 855px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    border: none;
+}
+
+.img-styles {
+    width: 500px;
+    height: 400px;
+}
