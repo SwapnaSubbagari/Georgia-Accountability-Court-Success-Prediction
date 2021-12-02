@@ -222,7 +222,7 @@ def page_not_found(error):
 if __name__ == '__main__':
 
     # Run this when running on LOCAL server...
-    app.run(debug=True)
+    app.run(debug=False)
 
     # ...OR run this when PRODUCTION server.
     # app.run(debug=False)
