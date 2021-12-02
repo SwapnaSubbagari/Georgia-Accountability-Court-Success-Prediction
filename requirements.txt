@@ -2,7 +2,7 @@ absl-py==1.0.0
 alabaster
 anaconda-client==1.7.2
 anaconda-navigator==2.1.1
-anaconda-project 5/work
+anaconda-project 
 anyio 
 appdirs==1.4.4
 argh==0.26.2
@@ -11,7 +11,7 @@ asn1crypto
 astroid 
 astropy 
 astunparse==1.6.3
-async-generator @
+async-generator 
 atomicwrites==1.4.0
 attrs
 autopep8 
