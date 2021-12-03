@@ -60,9 +60,10 @@ FT - Family Treatment
 VC - Veterans Court
 
 
-
-
 ## Front End
 
 Model will be housed, along with the potential for other visualizations, in a Heroku (or similar tool) website. Other tools to be used could include Python Pandas, Tableau, Flask. HTML/CSS/Bootstrap, and SQL database. 
-iction
+
+## Heroku App
+
+The deployed app can be viewed [here]( https://ga-court-success-prediction.herokuapp.com/)
