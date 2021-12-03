@@ -66,4 +66,8 @@ Model will be housed, along with the potential for other visualizations, in a He
 
 ## Heroku App
 
-The deployed app can be viewed [here]( https://ga-court-success-prediction.herokuapp.com/)
+The deployed app can be viewed [here]( https://ga-court-success-prediction.herokuapp.com/).
+
+## Final Presentation
+
+The final presentation can be viewed [here](https://docs.google.com/presentation/d/1AE77PszJ4ofK1i53RgwURCI_WWxfZl6L0TatMaF7tqk/edit#slide=id.gfc94c3dec1_0_75).
