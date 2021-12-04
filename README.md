@@ -19,36 +19,59 @@ Considering these potential savings for the state, it’s no wonder that these p
 ### Data points to examine:
 
 •	Acceptance type
+
 •	Age
+
 •	Arrest date, 
+
 •	Referral date
+
 •	Risk level
+
 •	Acceptance Date- Arrest Date → Processing Time(Mathew will get back to us)
+
 •	Exit date
+
 •	Exit status
+
 •	Referral source
+
 •	Demographic info: DOB, Education level(could change), Employment status(at entry), Gender, Income level, Employment stability, Military service, Race
+
 •	Program type (See program codes below)
+
 •	Clinical Diagnosis and Level
+
 •	Diagnosis Reason
+
 •	Number of drug tests
+
 •	Count weekly judicial status meetings 
+
 •	Primary drug of choice
+
 •	Secondary drug of choice
+
 •	Number of treatment sessions
-•	Phase 1 Date
-•	Phase 2 date
+
 •	Residence County
 
 
 
 ### Program Codes
+
 •	FD - Felony Drug
+
 •	DC - DUI Courts
+
 •	MH - Mental Health
+
 •	JD - Juvenile Drug
+
 •	JM - Juvenile Mental Health
+
 •	FT - Family Treatment
+
 •	VC - Veterans Court
 
 ## Methodology and Results
