@@ -1,4 +1,4 @@
-# Georgia-Accountability-Court-Success-Pred# Georgia Accountability Court Success Prediction
+# Georgia Accountability Court Success Prediction
 
 Matthew Bishop, Ashley Gates, Raheem Paxton, Swapna Subbagari
 
