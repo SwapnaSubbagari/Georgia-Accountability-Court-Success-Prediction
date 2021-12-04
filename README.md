@@ -7,12 +7,12 @@ Matthew Bishop, Ashley Gates, Raheem Paxton, Swapna Subbagari
 
 Georgia’s accountability court programs offer an alternative to traditional adjudication and incarceration for non-violent offenders charged with a variety of drug related crimes and DUIs. The state of Georgia contracted with the Carl Vinson Institute of Government at the University of Georgia to estimate the fiscal benefits of accountability courts, finding that, on average, the programs  saved the state of Georgia more than $22,000 per graduate. This study also found that accountability courts are almost $5,000 less than the costs for traditional adjudication per defendant when considering both state and local costs (https://cjcc.georgia.gov/document/full-report/download).
 
-Considering this potential sizable savings for the state, it’s no wonder that these types of programs are growing in popularity. This study will aim to predict characteristics in defendants that make them good potential graduates of an accountability program. 
+Considering this potential savings for the state, it’s no wonder that these programs are growing in popularity. The aims of this study were to identify the feature relevant for graduation and develop a prediction model that can be deployed for public use. 
 
 
 ## Problem Statement--Questions to Examine
 
-Application will be used by the court system to predict whether arrestees are good candidates for drug court. How determinate is the risk profile of the candidate as to whether or not a candidate will graduate from drug court? How determinate is the time frame between referral and acceptance to drug court in a candidate’s graduation status? 
+The proposed app could be used by the court system to predict whether program attendees  are good candidates for drug court. How determinate is the risk profile of the candidate as to whether or not a candidate will graduate from drug court? How determinate is the time frame between referral and acceptance to drug court in a candidate’s graduation status? 
 
 ## Methodology
 
